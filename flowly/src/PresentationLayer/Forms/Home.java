@@ -1,6 +1,6 @@
 package PresentationLayer.Forms;
 
-import BussnessLayer.Dog;
+import BussnessLayer.Flower;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 public class Home extends JDialog {
     //Buttons
     private JButton giveFoodButton;
-    private JButton playButton;
+    private JButton loveButton;
     private JButton giveWaterButton;
     private JButton walkButton;
     //Text
@@ -21,7 +21,7 @@ public class Home extends JDialog {
     private JLabel WalkText;
     private JPanel Home;
 
-    Dog dog = new Dog();
+    Flower dog = new Flower();
 
     private void setHungerText(){
         HungerText.setText(dog.HungerToString());
@@ -61,7 +61,7 @@ public class Home extends JDialog {
             }
         });
 
-        playButton.addActionListener(new ActionListener() {
+        loveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dog.setHunger(dog.getHunger() + 35);

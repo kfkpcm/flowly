@@ -2,9 +2,7 @@ package BussnessLayer;
 
 import PresentationLayer.Forms.Home;
 
-import java.util.concurrent.TimeUnit;
-
-public class Dog extends Thread{
+public class Flower extends Thread{
 
     Home home = null;
     //@Override
