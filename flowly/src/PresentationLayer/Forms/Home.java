@@ -3,7 +3,6 @@ package PresentationLayer.Forms;
 import BussnessLayer.Flower;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -20,6 +19,19 @@ public class Home extends JDialog {
     private JLabel HappinessText;
     private JLabel WalkText;
     private JPanel Home;
+    private JLabel fifthStageBad;
+    private JLabel fifthStageGood;
+    private JLabel fifthStageMid;
+    private JLabel firstStage;
+    private JLabel forthStageBad;
+    private JLabel forthStageGood;
+    private JLabel forthStageMid;
+    private JLabel secondStageBad;
+    private JLabel secondStageGood;
+    private JLabel secondStageMid;
+    private JLabel thirdStageBad;
+    private JLabel thirdStageGood;
+    private JLabel thirdStageMid;
 
     private Flower flower = new Flower();
     private Thread thread = new Thread(flower);
