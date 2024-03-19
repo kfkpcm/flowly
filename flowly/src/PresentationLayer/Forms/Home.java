@@ -36,6 +36,7 @@ public class Home extends JDialog {
     private Flower flower = new Flower();
     private Thread thread = new Thread(flower);
 
+
     public void StartThread()
     {
         thread.start();
@@ -53,6 +54,7 @@ public class Home extends JDialog {
         setThirstText();
         setHappinessText();
     }
+
     public Home() {
 
         setTitle("TAKE CARE OF THE FLOWER!");
@@ -61,7 +63,24 @@ public class Home extends JDialog {
         pack();
         setVisible(true);
 
-        //ResultSet set;
+
+
+        fifthStageBad.setVisible(false);
+        fifthStageGood.setVisible(false);
+        fifthStageMid.setVisible(false);
+        firstStage.setVisible(true);
+        forthStageBad.setVisible(false);
+        forthStageGood.setVisible(false);
+        forthStageMid.setVisible(false);
+        secondStageBad.setVisible(false);
+        secondStageGood.setVisible(false);
+        secondStageMid.setVisible(false);
+        thirdStageBad.setVisible(false);
+        thirdStageGood.setVisible(false);
+        thirdStageMid.setVisible(false);
+
+
+
 
 
         ThirstText.setText(flower.ThirstToString());

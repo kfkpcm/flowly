@@ -45,7 +45,7 @@ public class Flower extends Thread{
             }
             Thirst--;
             Happiness--;
-            System.out.println("Updated");
+            //System.out.println("Updated");
         }
     }
 
