@@ -4,34 +4,20 @@ import PresentationLayer.Forms.Home;
 
 public class Flower extends Thread{
 
-    Home home = null;
-    //@Override
-    public String HungerToString() {
 
-        return "Hunger: " + Hunger;
-    }
     public String ThirstToString() {
-        return "Thirst: " + Hunger;
+        return "Thirst: " + Thirst;
     }
     public String HappinessToString() {
-        return "Happiness: " + Hunger;
-    }
-    public String WalkToString() {
-        return "Walk: " + Hunger;
+        return "Happiness: " + Happiness;
     }
 
-    int Hunger = 100;
+
+
     int Thirst = 100;
     int Happiness = 100;
-    int Walk = 100;
 
-    public int getHunger() {
-        return Hunger;
-    }
 
-    public void setHunger(int hunger) {
-        Hunger = hunger;
-    }
 
     public int getThirst() {
         return Thirst;
@@ -49,27 +35,19 @@ public class Flower extends Thread{
         Happiness = happiness;
     }
 
-    public int getWalk() {
-        return Walk;
-    }
-
-    public void setWalk(int walk) {
-        Walk = walk;
-    }
-
     @Override
     public void run() {
-        if(Hunger > 0 ||Walk > 0 ||Thirst > 0 ||Happiness > 0 ){
-            Hunger--;
-            Walk--;
+        while(Thirst > 0 && Happiness > 0 ){
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             Thirst--;
             Happiness--;
-            //home.update();
+            System.out.println("Updated");
         }
-        //wait one 3 secons
     }
 
-    public String barking(){
-        return "Bark Bark";
-    }
+
 }

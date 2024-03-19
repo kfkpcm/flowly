@@ -13,7 +13,7 @@ public class Home extends JDialog {
     private JButton giveFoodButton;
     private JButton loveButton;
     private JButton giveWaterButton;
-    private JButton walkButton;
+    private JButton NewFlowerButton;
     //Text
     private JLabel HungerText;
     private JLabel ThirstText;
@@ -21,64 +21,60 @@ public class Home extends JDialog {
     private JLabel WalkText;
     private JPanel Home;
 
-    Flower dog = new Flower();
+    private Flower flower = new Flower();
+    private Thread thread = new Thread(flower);
 
-    private void setHungerText(){
-        HungerText.setText(dog.HungerToString());
+    public void StartThread()
+    {
+        thread.start();
     }
+
+
     private void setThirstText(){
-        ThirstText.setText(dog.ThirstToString());
+        ThirstText.setText(flower.ThirstToString());
     }
     private void setHappinessText(){
-        HappinessText.setText(dog.HappinessToString());
-    }
-    private void setWalkText(){
-        WalkText.setText(dog.WalkToString());
+        HappinessText.setText(flower.HappinessToString());
     }
 
     public void update(){
-        setHungerText();
         setThirstText();
         setHappinessText();
-        setWalkText();
     }
     public Home() {
-        setTitle("Sign Up");
+
+        setTitle("TAKE CARE OF THE FLOWER!");
         setContentPane(Home);
-        //setLocationRelativeTo(parent);
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         pack();
-        setMinimumSize(new Dimension(1440,900));
         setVisible(true);
 
         //ResultSet set;
 
 
-        giveFoodButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                dog.setHunger(dog.getHunger() + 30);
-            }
-        });
+        ThirstText.setText(flower.ThirstToString());
+        HappinessText.setText(flower.HappinessToString());
 
         loveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dog.setHunger(dog.getHunger() + 35);
+                flower.setHappiness(flower.getHappiness() + 35);
+                update();
             }
         });
 
         giveWaterButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dog.setThirst(dog.getThirst() + 40);
+                flower.setThirst(flower.getThirst() + 40);
+                update();
             }
         });
 
-        walkButton.addActionListener(new ActionListener() {
+        NewFlowerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dog.setWalk(dog.getWalk() + 40);
+                update();
             }
         });
     }
